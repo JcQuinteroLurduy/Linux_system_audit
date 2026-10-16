@@ -108,7 +108,7 @@ def run_section(key):
 
 def show_menu():
     # NEW: builds the menu from the SECTIONS dictionary, so if you add a new section it appears here automatically.
-    print("\n--- Linux System Audit ---")
+    print("\n =====|||Linux System Audit|||=====")
     keys = list(SECTIONS) # list(dictionary) gives us only the keys: ["cpu", "memory", "disk", ...]
     for number, key in enumerate(keys, start=1): # enumerate gives us a counter (starting at 1) + each key
         print(f"  {number}. {SECTIONS[key]['label']}")
@@ -121,7 +121,7 @@ def main():
     while True: # NEW: the menu repeats until the user chooses to quit
         keys = show_menu()
         # input() waits for the user to type. strip() removes spaces and lower() makes "A" and "a" equal
-        choice = input("\nChoose (e.g. 2 or 1,3,5): ").strip().lower()
+        choice = input("\nChoose an option").strip().lower()
 
         if choice == "q":
             break # exits the while loop, so the program ends
